@@ -4,12 +4,14 @@
 // @version      0.1
 // @description  GXJZY Teacher Evaluationfor systeam Quickselect all options
 // @author       AaGmix
-// @updateurl    
+// @supportURL   https://github.com/AaGMix/gxjzyTES_qsalloption
+// @updateurl    https://github.com/AaGMix/gxjzyTES_qsalloption/blob/master/script.js
 // @match        *://www.gxjzy.com/wwxx/*
+// @require      https://code.jquery.com/jquery-3.3.1.js
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-
+    $("[name = 'form1'] table:eq(2) tbody ").
 })();
