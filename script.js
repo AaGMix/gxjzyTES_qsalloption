@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gxjzy快速选择所有选项
 // @namespace    https://github.com/AaGMix/gxjzyTES_qsalloption
-// @version      0.1
+// @version      1.0
 // @description  GXJZY Teacher Evaluationfor systeam Quickselect all options
 // @author       AaGmix
 // @supportURL   https://github.com/AaGMix/gxjzyTES_qsalloption
