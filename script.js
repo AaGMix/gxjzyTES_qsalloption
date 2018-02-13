@@ -12,6 +12,70 @@
 
 (function() {
     'use strict';
+    // 单个选项
+    function Radio(eq) {
+        for (var i = 1; i <= 5; i++) {
+            // 识别只有4个选项的组
+            if (i == 4) {
+                var y = 4;
+            }
+            else {
+                y = 5;
+            }
+
+            for (var i2=1; i2 <= y; i2++) {
+                var a = i.toString() + i2.toString();
+                var strredio = "form[name = 'form1']>table:eq(1)>tbody input[name=a" + a + "]:eq(" + eq + ")";
+                var redio = $(strredio);
+                redio.prop("checked",true);
+            }
+        }
+    }
+    // 两个选项
+    function Radio5(eq1, eq2) {
+        for (var i = 1; i <= 5; i++) {
+            // 识别只有4个选项的组
+            if (i == 4) {
+                var y = 4;
+            }
+            else {
+                y = 5;
+            }
+
+            for (var i2=1; i2 <= y; i2++) {
+                var a = i.toString() + i2.toString();
+                // 判断排列方式
+                if (i != 5) {
+                    if (i % 2 == 1) {
+
+                        if (i2 % 2 == 1)
+                            var eq = eq1;
+                        else
+                            eq = eq2;
+
+                    } else {
+
+                        if (i2 % 2 == 0)
+                            var eq = eq1;
+                        else
+                            eq = eq2;
+
+                    }
+                } else {
+                    // 由于上面有一个4个选项的组 下面的组要用相反排列方式
+                    if (i2 % 2 == 0)
+                        var eq = eq1;
+                    else
+                        eq = eq2;
+                }
+
+                var strredio = "form[name = 'form1']>table:eq(1)>tbody input[name=a" + a + "]:eq(" + eq + ")";
+                var redio = $(strredio);
+                redio.prop("checked",true);
+            }
+        }
+    }
+
     var menu = $("form[name = 'form1']>table:eq(1)>tbody>tr:eq(-2)");
     var menuhtml = "<tr>" +
         "<td align='center' valign='middle' bgcolor='#FFFFFF'><strong>快速选择</strong></td>" +
@@ -29,134 +93,18 @@
     menu.after(menuhtml);
 
     $("#salla").click(function () {
-        document.form1.a11[0].checked = true;
-        document.form1.a12[0].checked = true;
-        document.form1.a13[0].checked = true;
-        document.form1.a14[0].checked = true;
-        document.form1.a15[0].checked = true;
-        document.form1.a21[0].checked = true;
-        document.form1.a22[0].checked = true;
-        document.form1.a23[0].checked = true;
-        document.form1.a24[0].checked = true;
-        document.form1.a25[0].checked = true;
-        document.form1.a31[0].checked = true;
-        document.form1.a32[0].checked = true;
-        document.form1.a33[0].checked = true;
-        document.form1.a34[0].checked = true;
-        document.form1.a35[0].checked = true;
-        document.form1.a41[0].checked = true;
-        document.form1.a42[0].checked = true;
-        document.form1.a43[0].checked = true;
-        document.form1.a44[0].checked = true;
-        document.form1.a51[0].checked = true;
-        document.form1.a52[0].checked = true;
-        document.form1.a53[0].checked = true;
-        document.form1.a54[0].checked = true;
-        document.form1.a55[0].checked = true;
+        Radio(0);
     });
     $("#sallb").click(function () {
-        document.form1.a11[1].checked = true;
-        document.form1.a12[1].checked = true;
-        document.form1.a13[1].checked = true;
-        document.form1.a14[1].checked = true;
-        document.form1.a15[1].checked = true;
-        document.form1.a21[1].checked = true;
-        document.form1.a22[1].checked = true;
-        document.form1.a23[1].checked = true;
-        document.form1.a24[1].checked = true;
-        document.form1.a25[1].checked = true;
-        document.form1.a31[1].checked = true;
-        document.form1.a32[1].checked = true;
-        document.form1.a33[1].checked = true;
-        document.form1.a34[1].checked = true;
-        document.form1.a35[1].checked = true;
-        document.form1.a41[1].checked = true;
-        document.form1.a42[1].checked = true;
-        document.form1.a43[1].checked = true;
-        document.form1.a44[1].checked = true;
-        document.form1.a51[1].checked = true;
-        document.form1.a52[1].checked = true;
-        document.form1.a53[1].checked = true;
-        document.form1.a54[1].checked = true;
-        document.form1.a55[1].checked = true;
+        Radio(1);
     });
     $("#sallc").click(function () {
-        document.form1.a11[2].checked = true;
-        document.form1.a12[2].checked = true;
-        document.form1.a13[2].checked = true;
-        document.form1.a14[2].checked = true;
-        document.form1.a15[2].checked = true;
-        document.form1.a21[2].checked = true;
-        document.form1.a22[2].checked = true;
-        document.form1.a23[2].checked = true;
-        document.form1.a24[2].checked = true;
-        document.form1.a25[2].checked = true;
-        document.form1.a31[2].checked = true;
-        document.form1.a32[2].checked = true;
-        document.form1.a33[2].checked = true;
-        document.form1.a34[2].checked = true;
-        document.form1.a35[2].checked = true;
-        document.form1.a41[2].checked = true;
-        document.form1.a42[2].checked = true;
-        document.form1.a43[2].checked = true;
-        document.form1.a44[2].checked = true;
-        document.form1.a51[2].checked = true;
-        document.form1.a52[2].checked = true;
-        document.form1.a53[2].checked = true;
-        document.form1.a54[2].checked = true;
-        document.form1.a55[2].checked = true;
+        Radio(2);
     });
     $("#sab").click(function () {
-        document.form1.a11[0].checked = true;
-        document.form1.a12[1].checked = true;
-        document.form1.a13[0].checked = true;
-        document.form1.a14[1].checked = true;
-        document.form1.a15[0].checked = true;
-        document.form1.a21[1].checked = true;
-        document.form1.a22[0].checked = true;
-        document.form1.a23[1].checked = true;
-        document.form1.a24[0].checked = true;
-        document.form1.a25[1].checked = true;
-        document.form1.a31[0].checked = true;
-        document.form1.a32[1].checked = true;
-        document.form1.a33[0].checked = true;
-        document.form1.a34[1].checked = true;
-        document.form1.a35[0].checked = true;
-        document.form1.a41[1].checked = true;
-        document.form1.a42[0].checked = true;
-        document.form1.a43[1].checked = true;
-        document.form1.a44[0].checked = true;
-        document.form1.a51[1].checked = true;
-        document.form1.a52[0].checked = true;
-        document.form1.a53[1].checked = true;
-        document.form1.a54[0].checked = true;
-        document.form1.a55[1].checked = true;
+        Radio5(0,1);
     });
     $("#sbc").click(function () {
-        document.form1.a11[1].checked = true;
-        document.form1.a12[2].checked = true;
-        document.form1.a13[1].checked = true;
-        document.form1.a14[2].checked = true;
-        document.form1.a15[1].checked = true;
-        document.form1.a21[2].checked = true;
-        document.form1.a22[1].checked = true;
-        document.form1.a23[2].checked = true;
-        document.form1.a24[1].checked = true;
-        document.form1.a25[2].checked = true;
-        document.form1.a31[1].checked = true;
-        document.form1.a32[2].checked = true;
-        document.form1.a33[1].checked = true;
-        document.form1.a34[2].checked = true;
-        document.form1.a35[1].checked = true;
-        document.form1.a41[2].checked = true;
-        document.form1.a42[1].checked = true;
-        document.form1.a43[2].checked = true;
-        document.form1.a44[1].checked = true;
-        document.form1.a51[2].checked = true;
-        document.form1.a52[1].checked = true;
-        document.form1.a53[2].checked = true;
-        document.form1.a54[1].checked = true;
-        document.form1.a55[2].checked = true;
-
+        Radio5(1,2);
     });
 })();
